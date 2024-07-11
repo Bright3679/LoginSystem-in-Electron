@@ -5,10 +5,7 @@ const bcrypt = require('bcryptjs');
 const sql = require('mssql');
 const cors = require('cors');
 
-
-
 const app = express();
-const PORT = process.env.PORT || 3000;
 app.use(cors());
 const config = {
     server: 'DESKTOP-NBH600P\\SQLEXPRESS',
@@ -73,7 +70,7 @@ app.post('/register', async (req, res) => {
 
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
-    
+
     if (!username || !password) {
         return res.status(400).json({ message: 'Username and password are required' });
     }
@@ -94,10 +91,10 @@ app.post('/login', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:`, PORT);
-});
-
 app.get('/', (req, res) => {
     res.send("i am alive")
 })
+
+module.exports = () => {
+    return app;
+};

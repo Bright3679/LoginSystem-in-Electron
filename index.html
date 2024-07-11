@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div class="login-container">
-    <h2>Login</h2>
-    <form id="loginForm">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username" autocomplete="off" required />
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="off"
-        required />
-      <button type="button" id="loginBtn">Login</button>
-      <button type="button" id="registerBtn">Register</button>
-    </form>
-    <p id="message"></p>
-  </div>
-  <script src="renderer.js"></script>
-</body>
-
+  <body>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+          autocomplete="off"
+          required
+        />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          autocomplete="off"
+          required
+        />
+        <button type="button" id="loginBtn">Login</button>
+        <button type="button" id="registerBtn">Register</button>
+      </form>
+      <p id="message"></p>
+    </div>
+    <script src="renderer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
 </html>

@@ -15,12 +15,30 @@ document.getElementById('registerBtn').addEventListener('click', async () => {
 
         if (response.ok) {
             document.getElementById('message').innerText = 'User registered successfully!';
+            Swal.fire({
+                title: "Success",
+                text: "User registered successfully!",
+                icon: "success",
+                backdrop: false
+            })
         } else {
             document.getElementById('message').innerText = data.message;
+            Swal.fire({
+                title: "Error",
+                text: data.message,
+                icon: "error",
+                backdrop: false
+            });
         }
     } catch (err) {
         console.error(err);
         document.getElementById('message').innerText = `Error: ${err.message}`;
+        Swal.fire({
+            title: "Error",
+            text: err.message,
+            icon: "error",
+            backdrop: false
+        });
     }
 });
 
@@ -42,11 +60,29 @@ document.getElementById('loginBtn').addEventListener('click', async () => {
         if (response.ok) {
             localStorage.setItem('token', data.token);
             document.getElementById('message').innerText = 'Login successful!';
+            Swal.fire({
+                title: "Success",
+                text: 'Login successful!',
+                icon: "success",
+                backdrop: false
+            });
         } else {
             document.getElementById('message').innerText = data.message;
+            Swal.fire({
+                title: "Error",
+                text: data.message,
+                icon: "error",
+                backdrop: false
+            });
         }
     } catch (err) {
         console.error(err);
         document.getElementById('message').innerText = `Error: ${err.message}`;
+        Swal.fire({
+            title: "Error",
+            text: err.message,
+            icon: "error",
+            backdrop: false
+        });
     }
 });
