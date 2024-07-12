@@ -58,8 +58,13 @@ body {
 #registerBtn {
   background-color: #007bff;
 }
-
+#registerUserBtn {
+  background-color: #007bff;
+}
 #registerBtn:hover {
+  background-color: #0056b3;
+}
+#registerUserBtn:hover {
   background-color: #0056b3;
 }
 
