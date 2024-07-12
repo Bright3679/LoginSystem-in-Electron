@@ -31,6 +31,16 @@ sql.connect(config).then(connectionPool => {
     console.error('Database connection failed', err);
 });
 
+app.use((req, res, next) => {
+    const startTime = new Date();
+    res.on('finish', () => {
+        const endTime = new Date();
+        const duration = endTime - startTime;
+        // console.log(`[${endTime.toISOString()}] ${req.method} ${req.url} - ${res.statusCode} - ${duration}ms`);
+        console.log(`${req.method} ${req.url} - ${res.statusCode} - ${duration}ms`);
+    });
+    next();
+});
 
 async function executeQuery(query, params) {
     try {
